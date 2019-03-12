@@ -1,0 +1,159 @@
+sudo apt-get install vim csh flex gfortran libgfortran3 g++                      cmake xorg-dev patch zlib1g-dev libbz2-dev                      libboost-all-dev openssh-server libcairo2                      libcairo2-dev libeigen3-dev lsb-core                      lsb-base net-tools network-manager                      git-core git-gui git-doc xclip gdebi-core
+
+sudo apt-get install build-essential cmake git unzip pkg-config libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libgtk-3-dev libhdf5-serial-dev graphviz libopenblas-dev libatlas-base-dev gfortran python-tk python3-tk python-imaging-tk
+
+sudo apt-get install build-essential cmake git unzip pkg-config libjpeg-dev libtiff5-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libgtk-3-dev libhdf5-serial-dev graphviz libopenblas-dev libatlas-base-dev gfortran python-tk python3-tk python-imaging-tk
+
+sudo apt update
+
+sudo apt-get install build-essential cmake git unzip pkg-config libjpeg-dev libtiff5-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libgtk-3-dev libhdf5-serial-dev graphviz libopenblas-dev libatlas-base-dev gfortran python-tk python3-tk python-imaging-tk
+
+sudo apt-get install vim csh flex gfortran libgfortran3 g++                      cmake xorg-dev patch zlib1g-dev libbz2-dev                      libboost-all-dev openssh-server libcairo2                      libcairo2-dev libeigen3-dev lsb-core                      lsb-base net-tools network-manager                      git-core git-gui git-doc xclip gdebi-core
+
+sudo apt-key adv --fetch-keys  http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+
+sudo bash -c 'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64 /" > /etc/apt/sources.list.d/cuda.list'
+
+sudo apt install nvidia-driver-418
+
+sudo apt install cuda-10-0
+
+nano ~/.profile
+
+tar -xf cudnn-10.0-linux-x64-v7.5.0.56.tgz
+
+sudo cp -R cuda/include/* /usr/local/cuda-10.0/include
+
+sudo cp -R cuda/lib64/* /usr/local/cuda-10.0/lib64
+
+tar -xf nccl_2.4.2-1+cuda10.0_x86_64.txz 
+
+cd nccl_2.4.2-1+cuda10.0_x86_64/
+
+sudo cp -R * /usr/local/cuda-10.0/targets/x86_64-linux/
+
+sudo ldconfig
+
+sudo apt-get update && sudo apt-get install -y python-numpy python-scipy python-nose python-h5py python-skimage python-matplotlib python-pandas python-sklearn python-sympy
+
+sudo apt-get install python-dev python3-dev python-pip python3-pip
+
+sudo apt-get install build-essential
+
+sudo apt-get install cmake git unzip zip
+
+sudo apt-get update && sudo apt-get install -y python3-numpy python3-scipy python3-nose python3-h5py python3-skimage python3-matplotlib python3-pandas python3-sklearn python3-sympy
+
+pip3 install -U --user pip six numpy wheel mock
+
+ pip3 install -U --user keras_applications==1.0.5 --no-deps
+
+pip3 install -U --user keras_preprocessing==1.0.3 --no-deps
+
+wget https://github.com/bazelbuild/bazel/releases/download/0.17.2/bazel-0.17.2-installer-linux-x86_64.sh
+
+
+ chmod +x bazel-0.17.2-installer-linux-x86_64.sh
+
+./bazel-0.17.2-installer-linux-x86_64.sh --user
+
+ echo 'export PATH="$PATH:$HOME/bin"' >> ~/.bashrc
+
+source ~/.bashrc
+
+sudo ldconfig
+
+git clone https://github.com/tensorflow/tensorflow.git
+
+cd tensorflow
+
+git checkout r1.12
+
+./configure
+
+bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
+
+bazel-bin/tensorflow/tools/pip_package/build_pip_package tensorflow_pkg
+
+ cd tensorflow_pkg/
+
+pip3 install -U --user tensorflow*.whl
+
+sudo apt-get install libpng-dev
+
+sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+
+sudo apt install libjasper1 libjasper-dev
+
+sudo apt-get install libjpeg-dev libpng-dev libtiff5-dev libjasper-dev libdc1394-22-dev libeigen3-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev sphinx-common libtbb-dev yasm libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libopenexr-dev libgstreamer-plugins-base1.0-dev libavutil-dev libavfilter-dev libavresample-dev
+
+sudo apt-get install build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+
+pip3 install -U --user keras
+
+sudo apt-get install libjpeg8-dev libtiff5-dev
+
+sudo apt install qtbase5-dev
+
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+
+sudo apt-get install libgtk2.0-dev
+
+sudo apt-get install libatlas-base-dev gfortran
+
+sudo apt-get install libhdf5-serial-dev
+
+sudo apt -y install libjpeg8-dev libpng-dev
+
+sudo apt -y install libtiff-dev
+
+sudo apt -y install libavcodec-dev libavformat-dev libswscale-dev libdc1394-22-dev
+
+sudo apt -y install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+
+sudo apt -y install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgtk2.0-dev libtbb-dev qt5-default libatlas-base-dev libfaac-dev libmp3lame-dev libtheora-dev libvorbis-dev libxvidcore-dev libopencore-amrnb-dev libopencore-amrwb-dev libavresample-dev x264 v4l-utils libprotobuf-dev protobuf-compiler libgoogle-glog-dev libgflags-dev libgphoto2-dev libeigen3-dev libhdf5-dev doxygen
+
+sudo apt -y install python3-testresources
+
+git clone https://github.com/opencv/opencv.git
+
+cd opencv
+
+git checkout 3.4
+
+cd ..
+
+git clone https://github.com/opencv/opencv_contrib.git
+
+cd opencv_contrib
+
+ git checkout 3.4
+
+cd ..
+
+cd opencv
+
+mkdir build
+
+cd build
+
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=ON -D WITH_CUDA=ON -D WITH_CUBLAS=ON -D WITH_FFMPEG=ON -D BUILD_opencv_cudacodec=OFF -D OPENCV_ENABLE_NONFREE=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D PYTHON_DEFAULT_EXECUTABLE=/usr/bin/python3 -D BUILD_EXAMPLES=ON ..
+
+make -j8 VERBOSE=1
+
+sudo make install
+
+sudo ldconfig
+
+cd ~
+
+ pip3 install -U --user scipy matplotlib pillow
+
+pip3 install -U --user imutils h5py requests progressbar2 scikit-learn scikit-image
+
+sudo apt-get install libpq-dev
+
+pip3 install -U --user psycopg2
+
+sudo apt-get install postgresql libpq-dev postgresql-client postgresql-client-common
+
