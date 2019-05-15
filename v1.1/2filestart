@@ -1,0 +1,36 @@
+#!/usr/bin/python
+from subprocess import Popen
+import sys
+import time
+import os
+import signal
+import subprocess
+
+filename = sys.argv[1]
+filename2 = sys.argv[2]
+while True:
+    print("\nStarting " + filename)
+    # The os.setsid() is passed in the argument preexec_fn so
+    # it's run after the fork() and before  exec() to run the shell.
+    ##pro = subprocess.Popen("python3 " + filename + " --video videos/thesisfullbw.mp4", stdout=subprocess.PIPE, 
+    ##                       shell=True, preexec_fn=os.setsid) 
+    pro = subprocess.Popen("python3 " + filename, stdout=subprocess.PIPE, 
+                           shell=True, preexec_fn=os.setsid) 
+    ##time.sleep(7)
+    ##os.killpg(os.getpgid(pro.pid), signal.SIGTERM)  # Send the signal to all the process groups
+    pro.wait()
+
+    print("\nStarting " + filename2)
+    # The os.setsid() is passed in the argument preexec_fn so
+    # it's run after the fork() and before  exec() to run the shell.
+    ##pro = subprocess.Popen("python3 " + filename + " --video videos/thesisfullbw.mp4", stdout=subprocess.PIPE, 
+    ##                       shell=True, preexec_fn=os.setsid) 
+    pro = subprocess.Popen("python3 " + filename2, stdout=subprocess.PIPE, 
+                           shell=True, preexec_fn=os.setsid) 
+    ##time.sleep(7)
+    ##os.killpg(os.getpgid(pro.pid), signal.SIGTERM)  # Send the signal to all the process groups
+    pro.wait()
+    #p = Popen("python3 " + filename + " --video videos/thesisfullbw.mp4", shell=True)
+    #time.sleep(5)
+    #p.kill()
+    #p.wait()
