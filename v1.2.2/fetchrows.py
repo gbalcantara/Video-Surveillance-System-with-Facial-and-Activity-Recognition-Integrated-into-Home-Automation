@@ -13,7 +13,7 @@ cur = conn.cursor()
 #print ("Total number of rows updated :", cur.rowcount)
 
 #cur.execute("SELECT id, fn, mdytm, zn, ps, ac from db11 ORDER BY id")
-cur.execute("SELECT id, ps, date, day, time_interval FROM db2b")
+cur.execute("SELECT id, fn, mdytm, zn, ps, ac from db11 WHERE ps = 'ntig' ORDER BY id")
 rows = cur.fetchall()
 id1 = cur.rowcount
 print (id1)
@@ -29,3 +29,5 @@ for row in rows:
 print ("Operation done successfully")
 conn.close()
 conn.close()
+
+print (id1)
